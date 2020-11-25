@@ -33,6 +33,7 @@ ext {
             support_design                : "com.google.android.material:material:1.0.0",
             support_fragment              : "androidx.fragment:fragment:1.2.0",
             lifecycle_extensions          : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+            support_exifinterface         : 'androidx.exifinterface:exifinterface:1.0.0',
 
             //单元测试
             junit                         : "junit:junit:4.12",
@@ -102,13 +103,14 @@ ext {
             //rxjava
             rxjava                        : "io.reactivex.rxjava2:rxjava:2.2.8",
             rxandroid                     : "io.reactivex.rxjava2:rxandroid:2.1.1",
-            rxlifecycle                   : "com.trello:rxlifecycle:1.0",
-            rxlifecycle_components        : "com.trello:rxlifecycle-components:1.0",
-            rxcache                       : "com.github.VictorAlbertos.RxCache:runtime:1.7.0-1.x",
+            rxlifecycle                   : "com.trello.rxlifecycle2:rxlifecycle:2.2.2",
+            rxlifecycle_components        : "com.trello.rxlifecycle2:rxlifecycle-components:2.2.2",
+            rxlifecycle_android           : "com.trello.rxlifecycle2:rxlifecycle-android:2.2.2",
+            rxcache                       : "com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x",
             rxcache_jolyglot_gson         : "com.github.VictorAlbertos.Jolyglot:gson:0.0.4",
             rxbinding_recyclerview_v7     : "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:1.0.1",
-            rxpermissions                 : "com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar",
-            rxerrorhandler                : "me.jessyan:rxerrorhandler:1.0.1",
+            rxpermissions                 : "com.github.tbruyelle:rxpermissions:0.10.2",
+            rxerrorhandler                : "me.jessyan:rxerrorhandler:2.1.1",
 
             //下拉刷新库
             SmartRefreshLayout            : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-10",

@@ -81,6 +81,8 @@ dependencies {
         exclude module: 'core'
     }
 
+    api rootProject.ext.dependencies.support_exifinterface
+
     //rx
     api rootProject.ext.dependencies.rxjava
     api(rootProject.ext.dependencies.rxandroid) {
@@ -98,17 +100,17 @@ dependencies {
         exclude module: 'rxjava'
         exclude module: 'jsr305'
     }
-    api(rootProject.ext.dependencies.rxlifecycle) {
+    api(rootProject.ext.dependencies.rxlifecycle_android) {
         exclude module: 'annotation'
         exclude module: 'rxjava'
         exclude module: 'rxandroid'
         exclude module: 'rxlifecycle'
     }
-    api(rootProject.ext.dependencies.rxpermissions) {
+    implementation(rootProject.ext.dependencies.rxpermissions) {
         exclude module: 'rxjava'
         exclude module: 'annotation'
     }
-    api rootProject.ext.dependencies.rxerrorhandler
+    implementation rootProject.ext.dependencies.rxerrorhandler
 
     //network
     api(rootProject.ext.dependencies.retrofit) {

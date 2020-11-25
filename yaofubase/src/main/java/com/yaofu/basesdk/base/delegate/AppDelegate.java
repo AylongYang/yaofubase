@@ -26,10 +26,10 @@ import android.content.res.Configuration;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.jess.arms.di.component.DaggerAppComponent;
 import com.yaofu.basesdk.base.App;
 import com.yaofu.basesdk.base.BaseApplication;
 import com.yaofu.basesdk.di.component.AppComponent;
+import com.yaofu.basesdk.di.component.DaggerAppComponent;
 import com.yaofu.basesdk.di.module.GlobalConfigModule;
 import com.yaofu.basesdk.integration.ConfigModule;
 import com.yaofu.basesdk.integration.ManifestParser;
