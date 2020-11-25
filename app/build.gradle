@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.aylong.base"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //版本控制
+    implementation rootProject.ext.dependencies.support_constraintlayout
+    //android兼容包
+    implementation rootProject.ext.dependencies.support_appCompat
+    implementation rootProject.ext.dependencies.support_fragment
+    //android 设计风格兼容包
+    implementation rootProject.ext.dependencies.support_design
+    //列表view
+    implementation rootProject.ext.dependencies.support_recyclerView
+    //cardView
+    implementation rootProject.ext.dependencies.support_cardView
+    //注解兼容包
+    implementation rootProject.ext.dependencies.support_annotation
+    // 多dex处理
+    implementation rootProject.ext.dependencies.support_multidex
+    // 这个必须明确指定版本1.1.1
+    implementation rootProject.ext.dependencies.lifecycle_extensions
+
+}

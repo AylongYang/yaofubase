@@ -1,0 +1,146 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    //版本控制
+    implementation rootProject.ext.dependencies.support_constraintlayout
+    //android兼容包
+    implementation rootProject.ext.dependencies.support_appCompat
+    implementation rootProject.ext.dependencies.support_fragment
+    //android 设计风格兼容包
+    implementation rootProject.ext.dependencies.support_design
+    //列表view
+    implementation rootProject.ext.dependencies.support_recyclerView
+    //cardView
+    implementation rootProject.ext.dependencies.support_cardView
+    //注解兼容包
+    implementation rootProject.ext.dependencies.support_annotation
+    // 多dex处理
+    implementation rootProject.ext.dependencies.support_multidex
+    // 这个必须明确指定版本1.1.1
+    compileOnly rootProject.ext.dependencies.lifecycle_extensions
+    compileOnly  rootProject.ext.dependencies.gif_drawle
+    compileOnly  rootProject.ext.dependencies.rxjava
+    compileOnly  rootProject.ext.dependencies.rxandroid
+    compileOnly  rootProject.ext.dependencies.glide
+    compileOnly rootProject.ext.dependencies.okhttp
+    compileOnly rootProject.ext.dependencies.gson
+    compileOnly rootProject.ext.dependencies.retrofit
+    compileOnly  rootProject.ext.dependencies.retrofit_converter_gson
+    compileOnly  rootProject.ext.dependencies.retrofit_adapter_rxjava
+    compileOnly  rootProject.ext.dependencies.retrofit_converter_scalars
+    compileOnly  rootProject.ext.dependencies.logger
+    compileOnly rootProject.ext.dependencies.eventbus
+    compileOnly rootProject.ext.dependencies.androideventbus
+
+
+    api(rootProject.ext.dependencies.legacy_support_v4) {
+        exclude module: 'annotation'
+        exclude module: 'coordinatorlayout'
+    }
+    //androidx
+    api(rootProject.ext.dependencies.support_appCompat) {
+        exclude module: 'annotation'
+    }
+    compileOnly rootProject.ext.dependencies.support_design
+    api(rootProject.ext.dependencies.support_recyclerView) {
+        exclude module: 'annotation'
+    }
+    api rootProject.ext.dependencies.support_annotation
+
+    //view
+    //compileOnly rootProject.ext.dependencies["autolayout"]
+    api(rootProject.ext.dependencies.butterknife) {
+        exclude module: 'annotation'
+        exclude module: 'core'
+    }
+
+    //rx
+    api rootProject.ext.dependencies.rxjava
+    api(rootProject.ext.dependencies.rxandroid) {
+        exclude module: 'rxjava'
+    }
+    api(rootProject.ext.dependencies.rxcache) {
+        exclude module: 'rxjava'
+        exclude module: 'dagger'
+        exclude module: 'api'
+    }
+    implementation(rootProject.ext.dependencies.rxcache_jolyglot_gson) {
+        exclude module: 'gson'
+    }
+    api(rootProject.ext.dependencies.rxlifecycle) {
+        exclude module: 'rxjava'
+        exclude module: 'jsr305'
+    }
+    api(rootProject.ext.dependencies.rxlifecycle) {
+        exclude module: 'annotation'
+        exclude module: 'rxjava'
+        exclude module: 'rxandroid'
+        exclude module: 'rxlifecycle'
+    }
+    api(rootProject.ext.dependencies.rxpermissions) {
+        exclude module: 'rxjava'
+        exclude module: 'annotation'
+    }
+    api rootProject.ext.dependencies.rxerrorhandler
+
+    //network
+    api(rootProject.ext.dependencies.retrofit) {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+    implementation(rootProject.ext.dependencies.retrofit_converter_gson) {
+        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+    implementation(rootProject.ext.dependencies.retrofit_adapter_rxjava) {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+    api rootProject.ext.dependencies.okhttp
+    compileOnly rootProject.ext.dependencies.glide
+    annotationProcessor(rootProject.ext.dependencies.glide_compiler) {
+        exclude module: 'jsr305'
+    }
+
+    //tools
+    compileOnly rootProject.ext.dependencies.support_annotation
+    api rootProject.ext.dependencies.dagger2
+    annotationProcessor rootProject.ext.dependencies.dagger2_compiler
+    compileOnly rootProject.ext.dependencies.androideventbus
+    compileOnly rootProject.ext.dependencies.eventbus
+    api rootProject.ext.dependencies.gson
+
+    //test
+    api rootProject.ext.dependencies.timber
+}

@@ -1,0 +1,198 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Define versions in a single place
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 19
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+
+    //Version
+    supportLibrary = '27.1.1'
+    multidex = '1.0.3'
+    constraintlayout = '1.1.3'
+    //app config
+    versionCode = 391
+    versionName = "3.9.1"
+    //Support Libraries dependencies
+    dependencies = [
+            //support库
+            support_recyclerView          : "androidx.recyclerview:recyclerview:1.0.0",
+            support_cardView              : "androidx.cardview:cardview:1.0.0",
+            support_appCompat             : "androidx.appcompat:appcompat:1.2.0",
+            support_palette               : "androidx.palette:palette:1.0.0",
+            support_multidex              : "androidx.multidex:multidex:2.0.0",
+            support_constraintlayout      : "androidx.constraintlayout:constraintlayout:1.1.3",
+            support_media_compat          : "androidx.media:media:1.0.0-rc01",
+            support_annotation            : "androidx.annotation:annotation:1.1.0",
+            support_design                : "com.google.android.material:material:1.0.0",
+            support_fragment              : "androidx.fragment:fragment:1.2.0",
+            lifecycle_extensions          : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+
+            //单元测试
+            junit                         : "junit:junit:4.12",
+            runner                        : "androidx.test:runner:1.2.0",
+            espresso_core                 : "androidx.test.espresso:espresso-core:3.2.0",
+
+            //图片库
+            multiple_imageselect          : "com.github.darsh2:MultipleImageSelect:3474549",
+            lib_crop                      : "com.soundcloud.android.crop:lib_crop:1.0.0",
+            advanced_luban                : "me.shaohui.advancedluban:library:1.3.5",
+            PhotoView                     : 'com.github.chrisbanes:PhotoView:2.1.3',
+            gif_drawle                    : 'pl.droidsonroids.gif:android-gif-drawable:1.2.8',
+
+            //腾讯库-bugly
+            crashreport_upgrade           : "com.tencent.bugly:crashreport_upgrade:1.4.2",
+            nativecrashreport             : "com.tencent.bugly:nativecrashreport:3.7.1",
+            //腾讯库-微信支付
+            wechat_pay                    : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.4",
+
+
+            //json库
+            gson                          : "com.google.code.gson:gson:2.8.5",
+
+            //greenrobot
+            eventbus                      : "org.greenrobot:eventbus:3.2.0",
+            eventbus_annotation           : "org.greenrobot:eventbus-annotation-processor:3.2.0",
+            "androideventbus"             : "org.simple:androideventbus:1.0.5.1",
+
+            //socket
+            socket                        : "io.socket:socket.io-client:1.0.0",
+
+            //网络库
+            retrofit                      : "com.squareup.retrofit2:retrofit:2.2.0",
+            retrofit_converter_scalars    : "com.squareup.retrofit2:converter-scalars:2.2.0",
+            retrofit_converter_gson       : "com.squareup.retrofit2:converter-gson:2.4.0",
+            retrofit_adapter_rxjava       : "com.squareup.retrofit2:adapter-rxjava2:2.5.0",
+            okhttp                        : "com.squareup.okhttp3:okhttp:3.12.0",
+            okhttp_logging_interceptor    : "com.squareup.okhttp3:logging-interceptor:3.12.0",
+
+            //leakcanary
+            leakcanary_android            : "com.squareup.leakcanary:leakcanary-android:1.6.3",
+            leakcanary_android_no_op      : "com.squareup.leakcanary:leakcanary-android-no-op:1.6.3",
+
+            //友盟
+            umsdk_push                    : "com.umeng.umsdk:push:5.0.2",
+            umsdk_analytics               : "com.umeng.umsdk:analytics:7.5.4",
+            umsdk_utdid                   : "com.umeng.umsdk:utdid:1.1.5.3",
+
+            //svga
+            svgaplayer_android            : "com.github.yyued:SVGAPlayer-Android:2.5.9",
+
+            //glide
+            glide                         : "com.github.bumptech.glide:glide:4.10.0",
+            glide_compiler                : "com.github.bumptech.glide:compiler:4.10.0",
+            //arouter
+            arouter_api                   : "com.alibaba:arouter-api:1.5.0",
+            arouter_compiler              : "com.alibaba:arouter-compiler:1.2.2",
+
+            //recyclerview
+            BaseRecyclerViewAdapterHelper : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
+            multitype                     : "me.drakeet.multitype:multitype:3.3.0",
+
+            //butterknife
+            butterknife                   : "com.jakewharton:butterknife:10.0.0",
+            butterknife_compiler          : "com.jakewharton:butterknife-compiler:10.0.0",
+
+            //rxjava
+            rxjava                        : "io.reactivex.rxjava2:rxjava:2.2.8",
+            rxandroid                     : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            rxlifecycle                   : "com.trello:rxlifecycle:1.0",
+            rxlifecycle_components        : "com.trello:rxlifecycle-components:1.0",
+            rxcache                       : "com.github.VictorAlbertos.RxCache:runtime:1.7.0-1.x",
+            rxcache_jolyglot_gson         : "com.github.VictorAlbertos.Jolyglot:gson:0.0.4",
+            rxbinding_recyclerview_v7     : "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:1.0.1",
+            rxpermissions                 : "com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar",
+            rxerrorhandler                : "me.jessyan:rxerrorhandler:1.0.1",
+
+            //下拉刷新库
+            SmartRefreshLayout            : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-10",
+            SmartRefreshHeader            : "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-10",
+
+            //jsbridge
+            jsbridge                      : "com.github.lzyzsd:jsbridge:1.0.4",
+
+            //scene
+            scene                         : "com.bytedance.scene:scene:1.0.4",
+
+            //换肤
+            skin_support                  : "skin.support:skin-support:3.1.4",
+            skin_support_design           : "skin.support:skin-support-design:3.1.4",
+            skin_support_cardview         : "skin.support:skin-support-cardview:3.1.4",
+            skin_support_constraint_layout: "skin.support:skin-support-constraint-layout:3.1.4",
+
+            //oaid
+            oaid                          : "com.github.gzu-liyujiang:Android_CN_OAID:1.0.2",
+            //logger
+            logger                        : "com.orhanobut:logger:1.15",
+
+            //dragger
+            dagger2                  : "com.google.dagger:dagger:2.26",
+            dagger2_android          : "com.google.dagger:dagger-android:2.26",
+            dagger2_android_support  : "com.google.dagger:dagger-android-support:2.26",
+            dagger2_compiler         : "com.google.dagger:dagger-compiler:2.26",
+            dagger2_android_processor: "com.google.dagger:dagger-android-processor:2.26",
+
+            //timer
+            timber                   : "com.jakewharton.timber:timber:4.7.1",
+            //tool
+            legacy_support_v4        : "androidx.legacy:legacy-support-v4:1.0.0",
+    ]
+
+    database = [schemaVersion   : 11,
+                appDaoPackage   : "com.zmyouke.course.greendao",
+                commonDaoPackage: "com.zmyouke.lib.common.greendao",
+                targetGenDir    : "src/main/java"
+    ]
+}
+
+allprojects {
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+        google()
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven {
+            url "http://maven.zmops.cc:8081/nexus/content/repositories/releases/"
+            credentials {
+                username 'dev2'
+                password 'dev2123'
+            }
+        }
+        maven {
+            url "http://maven.zmops.cc:8081/nexus/content/repositories/snapshots/"
+            credentials {
+                username 'dev2'
+                password 'dev2123'
+            }
+        }
+
+    }
+    //编译时报注释GBK编码错误解决
+    tasks.withType(Javadoc) {
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
+    }
+}
+
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.google.code.gson' && details.requested.name == 'gson') {
+                details.useVersion "2.8.5"
+            }
+            if (details.requested.group == 'androidx.lifecycle' && details.requested.name == 'lifecycle-livedata') {
+                details.useVersion "2.2.0"
+            }
+        }
+    }
+}

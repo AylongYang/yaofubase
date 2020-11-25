@@ -1,0 +1,3 @@
+include ':yaofubase'
+include ':app'/*,':arms'*/
+rootProject.name = "youfubase"
