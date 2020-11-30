@@ -17,7 +17,8 @@ import android.text.TextUtils;
 
 import androidx.core.content.FileProvider;
 
-import com.yaofu.basesdk.log.Log;
+
+import com.yaofu.basesdk.log.YLog;
 
 import java.io.File;
 import java.security.MessageDigest;
@@ -595,7 +596,7 @@ public class PackageUtils {
                 || commandResult.successMsg.contains("success"))) {
             return DELETE_SUCCEEDED;
         }
-        Log.e(
+        YLog.e(
                 TAG,
                 new StringBuilder()
                         .append("uninstallSilent successMsg:")
@@ -864,7 +865,7 @@ public class PackageUtils {
                 }
             } catch (NumberFormatException e) {
                 e.printStackTrace();
-                Log.e(TAG, "pm get-install-location error");
+                YLog.e(TAG, "pm get-install-location error");
             }
         }
         return APP_INSTALL_AUTO;
